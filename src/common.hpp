@@ -1,6 +1,7 @@
 #pragma once
 #pragma warning(disable : 4996) // CRT_SECURE_NO_WARNINGS
 
+#define ll long long
 #if defined(_WIN32)
 #define PLATFORM_NAME "windows"
 #elif defined(_WIN64)
