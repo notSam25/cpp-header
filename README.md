@@ -14,8 +14,11 @@ int main()  {
 }
 ```
 ```bash
-# To build:
-clang++ src/testCommon.cpp -o TestBuild
+# To build test:
+mkdir build && cd build && cmake .. && cmake --build .
+
+# To run:
+./testSamHeaders
 ```
 # Media
 Linux(Ubuntu) ->
