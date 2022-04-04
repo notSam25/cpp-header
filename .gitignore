@@ -33,3 +33,6 @@
 
 # Build Directory
 /build/
+
+# Clangd stuff
+/.cache/

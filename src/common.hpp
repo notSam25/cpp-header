@@ -22,6 +22,8 @@
 #include <stdexcept>
 #include <array>
 
+#include "logging.h"
+
 /*
  * Made for: Linux, Windows
  * Compiled with: clang++ version 10.0.0
