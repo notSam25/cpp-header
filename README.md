@@ -4,15 +4,17 @@
 # Buiding
 This was built with clang++ version 10.0.0.0
 Tested on Windows10 and Linux(Ubuntu)
-Exampe:
-```
+Example:
+```cpp
 #include "common.hpp"
 
 int main()  {
     Common::PrintSystemInformation();
     return 0;
 }
-
+```
+```bash
+# To build:
 clang++ TestFile.cpp -o TestBuild
 ```
 # Media
