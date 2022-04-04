@@ -15,7 +15,7 @@ int main()  {
 ```
 ```bash
 # To build:
-clang++ TestFile.cpp -o TestBuild
+clang++ src/testCommon.cpp -o TestBuild
 ```
 # Media
 Linux(Ubuntu) ->
