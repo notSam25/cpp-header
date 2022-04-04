@@ -22,7 +22,7 @@
 #include <stdexcept>
 #include <array>
 
-#include "logging.h"
+#include "logging.hpp"
 
 /*
  * Made for: Linux, Windows
@@ -48,17 +48,19 @@ namespace Common
 
         while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr)
             result += buffer.data();
-
+        if(result[result.length()-1] == '\n') 
+            result.pop_back();
         return result;
     }
 
     inline void PrintSystemInformation()    {
-        printf("[dbg] OS Name     -> %s\n", GetOperatingSystemName());
+        Common::log::info("OS Name     -> {}", GetOperatingSystemName());
 
         if(strcmp(PLATFORM_NAME, "linux") == 0) {
-            printf("[dbg] OS Version  -> %s", GetSystemOutput("cat /etc/os-release | grep VERSION=").c_str());
-            printf("[dbg] Username    -> %s", GetSystemOutput("whoami").c_str());
-        } else
-            printf("[dbg] OS Version  -> %s\n", GetSystemOutput("Get-WmiObject -Class win32_OperatingSystem | Select Version, BuildNumber").c_str()); 
+            Common::log::info("OS Version  -> {}", GetSystemOutput("cat /etc/os-release | grep VERSION="));
+            Common::log::info("Username    -> {}", GetSystemOutput("whoami"));
+        } else {
+            Common::log::info("OS Version  -> {}", GetSystemOutput("Get-WmiObject -Class win32_OperatingSystem | Select Version, BuildNumber"));
+        }
     }
 }

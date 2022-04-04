@@ -4,6 +4,8 @@ namespace Common {
 namespace log {
     spdlog::logger& getLogger();
 
+    void setLevel(spdlog::level::level_enum level);
+
     template<typename... Args>
     void trace(spdlog::format_string_t<Args...> fmt, Args &&... args) {
         getLogger().trace(fmt, std::forward<Args>(args)...);
