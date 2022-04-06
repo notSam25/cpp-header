@@ -24,7 +24,7 @@
 
 namespace Common
 {
-    inline const char *GetOperatingSystemName()     {
+    inline const char* GetOperatingSystemName()     {
         return (PLATFORM_NAME == NULL) ? "" : PLATFORM_NAME;
     }
 
