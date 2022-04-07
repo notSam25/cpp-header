@@ -5,14 +5,6 @@
 This was built with clang++ version 10.0.0.0(My IP address).
 Tested on Windows10 and Linux(Ubuntu)
 Example:
-```cpp
-#include "common.hpp"
-
-int main()  {
-    Common::PrintSystemInformation();
-    return 0;
-}
-```
 ```bash
 # To build test:
 mkdir build && cd build && cmake .. && cmake --build .
