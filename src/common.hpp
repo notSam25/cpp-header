@@ -12,6 +12,7 @@
 #define PLATFORM_NAME NULL
 #endif
 
+#include <functional>
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
@@ -21,6 +22,8 @@
 #include <memory>
 #include <stdexcept>
 #include <array>
+#include <chrono>
+#include <ctime>
 
 namespace Common
 {
@@ -54,4 +57,38 @@ namespace Common
         } else
             printf("[dbg] OS Version  -> %s\n", GetSystemOutput("Get-WmiObject -Class win32_OperatingSystem | Select Version, BuildNumber").c_str()); 
     }
+
+    class Debug {
+    public:
+        Debug(bool _UseLogFile = true) : UseLogFile(_UseLogFile) {}
+        enum class LogType {
+            Error = 0,
+            Warning,
+            Info
+        };
+        void LogData(LogType type, const std::string &data)
+        {
+            switch (type)
+            {
+            case LogType::Error:
+                std::cout << "\033[1;31m[!]\033[0m " << data << std::endl;
+                break;
+            case LogType::Warning:
+                std::cout << "\033[1;33m[#]\033[0m " << data << std::endl;
+                break;
+            case LogType::Info:
+                std::cout << "\033[1;34m[*]\033[0m " << data << std::endl;
+                break;
+
+            default:
+                break;
+            }
+            if(UseLogFile)  {
+                //Log data in file
+            }
+        }
+
+    private:
+        bool UseLogFile;
+    };
 }
