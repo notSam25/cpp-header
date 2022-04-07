@@ -22,6 +22,7 @@
 #include <memory>
 #include <stdexcept>
 #include <array>
+#include <vector>
 #include <chrono>
 #include <ctime>
 

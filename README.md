@@ -23,4 +23,4 @@ mkdir build && cd build && cmake .. && cmake --build .
 # Media
 Linux(Ubuntu) ->
 
-<img width=1000 height=600 src="https://cdn.discordapp.com/attachments/764959698888687616/960016829366038538/ubuntuMedia.png" />
+<img src="https://cdn.discordapp.com/attachments/764959698888687616/961617526243074108/Screenshot_from_2022-04-07_08-24-07.png" />
