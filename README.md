@@ -7,10 +7,14 @@ Tested on Windows10 and Linux(Ubuntu)
 Example:
 ```bash
 # To build test:
-mkdir build && cd build && cmake .. && cmake --build .
 
+mkdir build
+cd build
+cmake ..
+make
 # To run:
-./testSamHeaders
+
+./Debug
 ```
 # Media
 Linux(Ubuntu) ->
