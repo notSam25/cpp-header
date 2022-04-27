@@ -5,5 +5,8 @@ set(SOURCES
     src/testCommon.cpp
 )
 
-add_executable(samHeaders ${SOURCES})
-target_include_directories(samHeaders PUBLIC include)
+add_executable(Debug ${SOURCES})
+target_include_directories(Debug PUBLIC src)
+
+add_library(samHeaders INTERFACE)
+target_include_directories(samHeaders INTERFACE src)
